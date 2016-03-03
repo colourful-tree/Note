@@ -1,29 +1,26 @@
-package qiao.baikeExtract;
+package com.colourful.baike.relation.extract;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 
-import org.apache.xerces.xni.parser.XMLDocumentFilter;
-import org.apache.xerces.xni.parser.XMLInputSource;
-import org.cyberneko.html.filters.ElementRemover;
-import org.cyberneko.html.parsers.DOMParser;
-import org.w3c.dom.*;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import javax.xml.parsers.*;
 import javax.xml.transform.TransformerException;
 
+import org.apache.xerces.xni.parser.XMLInputSource;
 import org.apache.xpath.XPathAPI;
+import org.cyberneko.html.parsers.DOMParser;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
-public class BaikeExtract {
+
+public class BaikeRelationExtract {
+
 
   public void extract(String html) throws  SAXException, IOException, TransformerException {
 
@@ -59,8 +56,9 @@ public class BaikeExtract {
   }
 
   public static void main(String[] args) throws Exception {
-    BaikeExtract be = new BaikeExtract();
+    BaikeRelationExtract be = new BaikeRelationExtract();
     String page = be.fetcherPage();
     be.extract(page);
   }
+
 }
