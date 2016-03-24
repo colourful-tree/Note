@@ -1,0 +1,23 @@
+numpy, scipy
+  apt-get install python-numpy
+  apt-get install python-scipy
+pyyaml
+  http://pyyaml.org/wiki/PyYAML
+  python setup.py install
+HDF5 and h5py (optional, required if you use model saving/loading functions)
+  HDF5:
+      http://www.hdfgroup.org/HDF5/release/obtainsrc.html
+      $ gunzip < hdf5-X.Y.Z.tar.gz | tar xf -
+      $ cd hdf5-X.Y.Z
+      $ ./configure --prefix=/usr/local/hdf5 <more configure_flags>
+      $ make
+      $ make check                # run test suite.
+      $ make install
+      $ make check-install        # verify installation.
+  "hdf5.h":
+      apt-get install libhdf5-dev
+  h5py:
+      http://docs.h5py.org/en/latest/build.html
+      pip install h5py
+Theano:     
+  sudo pip install Theano
