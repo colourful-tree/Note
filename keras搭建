@@ -21,3 +21,6 @@ HDF5 and h5py (optional, required if you use model saving/loading functions)
       pip install h5py
 Theano:     
   sudo pip install Theano
+  
+update:
+  pip install git+git://github.com/fchollet/keras.git --upgrade
