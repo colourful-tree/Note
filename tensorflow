@@ -1,0 +1,5 @@
+tensorboard:
+  tensorboard --logdir=logs
+
+update:
+  pip install --upgrade tensorflow
