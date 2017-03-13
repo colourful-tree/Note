@@ -9,3 +9,8 @@ git commit -m "first commit" //提交到本地源码库，并附加提交注释
 git remote add origin https://github.com/chape/test.git //添加到远程项目，别名为origin
 
 git push -u origin master //把本地源码库push到github 别名为origin的远程项目中，确认提交
+
+2.从github上删除
+git rm -f xxx.txt
+git commit -m "remove xxx.txt"
+git push
