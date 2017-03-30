@@ -1,0 +1,16 @@
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+echo deb http://storage.googleapis.com/bazel-apt stable jdk1.8 | sudo tee /etc/apt/sources.list.d/bazel.list
+curl https://storage.googleapis.com/bazel-apt/doc/apt-key.pub.gpg | sudo apt-key add -
+sudo apt-get update 
+    此时可能出现 
+    W: 无法下载 http://storage.googleapis.com/bazel-apt/dists/stable/InRelease Unable to find expected entry ‘jdk1.8/binary-i386/Packages’ in Release file (Wrong sources.list entry or malformed file) 
+    E: Some index files failed to download. They have been ignored, or old ones used instead. 
+    的错误，解决： 
+    sudo vim /etc/apt/sources.list.d/bazel.list 
+    将deb http://storage.googleapis.com/bazel-apt stable jdk1.8修改为deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8 
+    参考Unable to find expected entry ‘main/binary-i386/Packages - Chrome [duplicate] 
+    Software Update fails - Unable to find expected entry
+sudo apt-get install bazel
+sudo apt-get upgrade bazel
