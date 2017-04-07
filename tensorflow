@@ -1,5 +1,16 @@
 tensorboard:
   tensorboard --logdir=logs
-
+  1.1.0源码安装后失效：
+    https://github.com/tensorflow/tensorflow/issues/8888
+    [
+      sudo vim /usr/local/bin/tensorboard
+      add
+        from tensorflow.contrib import bayesflow
+      before
+        from tensorflow.tensorboard.tensorboard import main
+      [I noticed if just import bayesflow and then import main, it is fine. But if changing the order, it will have error like you.]
+    ]
 update:
   pip install --upgrade tensorflow
+  
+  
