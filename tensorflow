@@ -10,6 +10,12 @@ tensorboard:
         from tensorflow.tensorboard.tensorboard import main
       [I noticed if just import bayesflow and then import main, it is fine. But if changing the order, it will have error like you.]
     ]
+    上面这个方法并不好用啊！！！
+    修改一下源代码（/usr/local/lib/python2.7/dist-packages/tensorflow/contrib/tensorboard/plugins/projector/__init__.py）
+    [os.path.join(logdir, projector_plugin.PROJECTOR_FILENAME), config_pbtxt)]
+    之后
+    python -m tensorflow.tensorboard --logdir=./
+    久违的画面啊，泪奔~
 update:
   pip install --upgrade tensorflow
   
